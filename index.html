@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Join Our Team</title>
+  <style>
+    body {
+      background-color: black;
+      color: goldenrod;
+    }
+
+    #joinOurTeamForm {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid goldenrod;
+      border-radius: 5px;
+    }
+
+    #joinOurTeamForm label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    #joinOurTeamForm input[type="text"],
+    #joinOurTeamForm input[type="email"],
+    #joinOurTeamForm select {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      border: 1px solid goldenrod;
+      border-radius: 5px;
+    }
+
+    #joinOurTeamForm input[type="submit"] {
+      background-color: goldenrod;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #joinOurTeamForm input[type="submit"]:hover {
+      background-color: darkgoldenrod;
+    }
+    h1{
+        width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid goldenrod;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<h1>Join Our Team</h1>
+<body>
+  <form id="joinOurTeamForm" action="https://formbold.com/s/9ExWk" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="city">City:</label><br>
+    <select id="city" name="city" required>
+      <option value="">Select a city</option>
+      <option value="kochi">Kochi</option>
+      <option value="trivandrum">Trivandrum</option>
+      <option value="kozhikode">Kozhikode</option>
+      <!-- Add more cities as needed -->
+    </select><br>
+    <input type="submit" value="Join Our Team" onclick="link()">
+  </form>
+
+  <script>
+    const form = document.getElementById("joinOurTeamForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+
+      // Send form data to server
+      fetch(form.action, {
+        method: form.method,
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Form submitted successfully
+          alert("Form submitted successfully!");
+          form.reset();
+        } else {
+          // Form submission failed
+          alert("Form submission failed.");
+        }
+      })
+      .catch(error => {
+        // Network error
+        alert("Network error.");
+      });
+    });
+  </script>
+  <script>
+    function link() {
+      window.open("https://chat.whatsapp.com/HISk1kvFy5uAgf8TUneH4Z")  
+    }
+  </script>
+</body>
+</html>
